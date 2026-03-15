@@ -201,17 +201,41 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# [cite: 14]
+.DS_Store
+Thumbs.db
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# [cite: 15]
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # Python cache and environments
 __pycache__/
 venv/
 .env
 
+# [cite: 16]
+bin/
+build/
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV/
+
 # Large data files
 *.txt
 *.csv
+*.json
 *.log
+*.sqlite
+*.zip
+*.7z
+*.tar.gz
