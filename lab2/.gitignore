@@ -1,0 +1,16 @@
+# Ігнорування великих датасетів (Lab 2)
+household_power_consumption.txt
+*.csv
+*.zip
+
+# Тимчасові файли Jupyter Notebook
+.ipynb_checkpoints/
+
+# Кеш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Віртуальні оточення
+venv/
+.env/
