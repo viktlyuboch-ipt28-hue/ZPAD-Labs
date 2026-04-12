@@ -1,0 +1,23 @@
+# Тимчасові файли Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.virtual_documents/
+
+# Кеш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Віртуальні оточення
+venv/
+.venv/
+env/
+.env/
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Data
+*.log
+*.tmp
