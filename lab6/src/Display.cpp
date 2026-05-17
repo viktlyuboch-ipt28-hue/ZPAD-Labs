@@ -10,7 +10,7 @@ Display::~Display() {
 //so, sup, why r u here?:D
 void Display::init(AppState& state) {
     cv::namedWindow(windowName_, cv::WINDOW_NORMAL);
-    cv::resizeWindow(windowName_, 1280, 720);
+    cv::resizeWindow(windowName_, 640, 480);
 
     // трекбар для яскравості
     cv::createTrackbar("Brightness", windowName_, &state.brightness, 100, nullptr);
