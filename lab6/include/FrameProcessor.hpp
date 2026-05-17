@@ -13,7 +13,7 @@ public:
     cv::Mat applyZoom(const cv::Mat& frame, double factor);
 
     // Перекриття всіх елементів HUD (stats, mode name, help)
-    void drawHUD(cv::Mat& frame, const AppState& state);
+    void drawHUD(cv::Mat& frame, const AppState& state) const;
 
 private:
     // Окремі фільтри
