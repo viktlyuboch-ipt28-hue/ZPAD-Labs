@@ -14,13 +14,6 @@ void Display::init(AppState& state) {
 
     // трекбар для яскравості
     cv::createTrackbar("Brightness", windowName_, &state.brightness, 100, nullptr);
-
-    // зворотний звязок з мишкою
-    cbData_.appState = &state;
-    cbData_.keyProcessor = nullptr;  
-    // зберігаємо вказівник безпосередньо на стан; тут викликається KeyProcessor::processMouse
-    cv::setMouseCallback(windowName_, &Display::onMouse, &state);
-
     std::cout << "[Display] Window \"" << windowName_ << "\" created." << std::endl;
 }
 
