@@ -14,8 +14,8 @@ bool CameraProvider::open() {
         std::cerr << "[CameraProvider] Cannot open camera with index " << deviceIndex_ << std::endl;
         return false;
     }
-    cap_.set(cv::CAP_PROP_FRAME_WIDTH, 1280);
-    cap_.set(cv::CAP_PROP_FRAME_HEIGHT, 720);
+    cap_.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    cap_.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
     std::cout << "[CameraProvider] Camera opened: "
               << getWidth() << "x" << getHeight()
               << " @ " << getFPS() << " FPS" << std::endl;
