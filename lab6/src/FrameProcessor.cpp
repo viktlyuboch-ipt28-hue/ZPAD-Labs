@@ -13,7 +13,6 @@ cv::Mat FrameProcessor::process(const cv::Mat& frame, const AppState& state) {
     double alpha = 0.5 + static_cast<double>(state.brightness) / 100.0;
     int    beta  = static_cast<int>((state.brightness - 50) * 1.5);
     cv::Mat adjusted;
-    zoomed.convertTo(adjusted, -1, alpha, beta);
 
     cv::Mat result;
     switch (state.mode) {
@@ -25,22 +24,6 @@ cv::Mat FrameProcessor::process(const cv::Mat& frame, const AppState& state) {
     drawLines(result, state);
     drawHUD(result, state);
     return result;
-}
-
-//Зум
-
-cv::Mat FrameProcessor::applyZoom(const cv::Mat& frame, double factor) {
-    if (std::abs(factor - 1.0) < 1e-3) return frame.clone();
-
-    int w = frame.cols, h = frame.rows;
-    int cw = static_cast<int>(w / factor);
-    int ch = static_cast<int>(h / factor);
-    int cx = (w - cw) / 2;
-    int cy = (h - ch) / 2;
-
-    cv::Mat zoomed;
-    cv::resize(frame(cv::Rect(cx, cy, cw, ch)), zoomed, {w, h}, 0, 0, cv::INTER_LINEAR);
-    return zoomed;
 }
 
 //Фільтри
