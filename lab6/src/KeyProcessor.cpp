@@ -52,16 +52,7 @@ bool KeyProcessor::processKey(int key, AppState& state) {
     return true;
 }
 
-void KeyProcessor::processMouse(int event, int x, int y, int flags, AppState& state) {
-    // зум через колесо мишки
-    if (event == cv::EVENT_MOUSEWHEEL) {
-        int delta = cv::getMouseWheelDelta(flags);
-        if (delta > 0)
-            state.zoomFactor = std::min(state.zoomFactor + 0.1, 4.0);
-        else
-            state.zoomFactor = std::max(state.zoomFactor - 0.1, 0.5);
-        return;
-    }
+void KeyProcessor::processMouse(int event, int x, int y, int /*flags*/, AppState& state) {
 
     // для малювання
     if (state.mode == ProcessingMode::DRAW) {
