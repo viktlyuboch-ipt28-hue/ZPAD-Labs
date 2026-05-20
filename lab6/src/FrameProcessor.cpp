@@ -13,6 +13,7 @@ cv::Mat FrameProcessor::process(const cv::Mat& frame, const AppState& state) {
     double alpha = 0.5 + static_cast<double>(state.brightness) / 100.0;
     int    beta  = static_cast<int>((state.brightness - 50) * 1.5);
     cv::Mat adjusted;
+    frame.convertTo(adjusted, -1, alpha, beta);
 
     cv::Mat result;
     switch (state.mode) {
