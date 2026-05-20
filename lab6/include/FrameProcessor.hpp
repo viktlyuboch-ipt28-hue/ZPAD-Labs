@@ -9,9 +9,6 @@ public:
     // вхід
     cv::Mat process(const cv::Mat& frame, const AppState& state);
 
-    // для використання зуму
-    cv::Mat applyZoom(const cv::Mat& frame, double factor);
-
     // Перекриття всіх елементів HUD (stats, mode name, help)
     void drawHUD(cv::Mat& frame, const AppState& state) const;
 
@@ -28,6 +25,6 @@ private:
                                 cv::Point pos, double scale,
                                 cv::Scalar color, int thickness = 1) const;
 
-    int glitchOffset_ = 0;
+    mutable int glitchOffset_ = 0;
     mutable int glitchTick_ = 0;
 };
