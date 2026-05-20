@@ -11,7 +11,7 @@ struct MouseCallbackData {
 
 class Display {
 public:
-    explicit Display(const std::string& windowName = "Camera Vision");
+    explicit Display(const std::string& windowName = "Camera Vision:3");
     ~Display();
 
     void init(AppState& state);
@@ -25,5 +25,4 @@ public:
 
 private:
     std::string windowName_;
-    MouseCallbackData cbData_;
 };
