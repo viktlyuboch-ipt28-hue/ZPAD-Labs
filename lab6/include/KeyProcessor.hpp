@@ -21,9 +21,6 @@ struct AppState {
     cv::Point drawEnd{-1, -1};
     std::vector<std::pair<cv::Point, cv::Point>> drawnLines;
 
-    // Зум мишкою
-    double zoomFactor = 1.0;
-
     // Трекінг яскравості
     int brightness = 50;   // від 0 до 100
 };
