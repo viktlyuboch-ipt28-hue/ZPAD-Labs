@@ -9,8 +9,6 @@ FrameProcessor::FrameProcessor() : glitchOffset_(0), glitchTick_(0) {}
 cv::Mat FrameProcessor::process(const cv::Mat& frame, const AppState& state) {
     if (frame.empty()) return frame;
 
-    cv::Mat zoomed = applyZoom(frame, state.zoomFactor);
-
     // застосування яскравості
     double alpha = 0.5 + static_cast<double>(state.brightness) / 100.0;
     int    beta  = static_cast<int>((state.brightness - 50) * 1.5);
@@ -116,7 +114,7 @@ void FrameProcessor::drawHUD(cv::Mat& frame, const AppState& state) const {
     cv::Size ts = cv::getTextSize(modeStr, cv::FONT_HERSHEY_SIMPLEX, 0.65, 1, &baseline);
     drawTextWithBackground(frame, modeStr, {(frame.cols - ts.width) / 2, 30}, 0.65, {255, 255, 0});
 
-    std::string help = "[0] Normal  [1] Glitch  [2] Pixelate  [D] Draw  [Tab] cycle  [scroll] zoom  [X] clear  [slider] brightness  [Q] quit";
+    std::string help = "[0] Normal  [1] Glitch  [2] Pixelate  [D] Draw  [Tab] cycle  [X] clear  [slider] brightness  [Q] quit";
     drawTextWithBackground(frame, help, {5, frame.rows - 8}, 0.38, {180, 180, 180});
 }
 
