@@ -2,6 +2,9 @@
 build/
 
 # Compiled object files
+build/
+bin/
+obj/
 *.o
 *.obj
 
@@ -20,6 +23,8 @@ compile_commands.json
 # IDE / editor
 .vscode/
 .idea/
+*.user
+cmake-build-*/
 *.swp
 *.swo
 *~
