@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
     CameraProvider camera(cameraIndex);
     KeyProcessor   keyProc;
     FrameProcessor frameProc;
-    Display        display("Camera Vision");
+    Display        display("Camera Vision:3");
     AppState       state;
 
     // Ініт 
@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << "\n>:3 Camera Vision started C:<" << std::endl;
     std::cout << "Keys: [0-7] modes | [D] draw mode" << std::endl;
-    std::cout << "      [Tab] cycle mode | [+/-] or scroll = zoom" << std::endl;
+    std::cout << "      [Tab] cycle mode" << std::endl;
     std::cout << "      [X] clear drawings | [Q] / [Esc] = quit" << std::endl;
 
     // основний цикл
